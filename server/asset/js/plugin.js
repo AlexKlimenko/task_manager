@@ -21,25 +21,27 @@
         $(activeBlock).addClass('active');
     }
 
-    function task_accordion(e) {
-        var parent_task = $(this).closest('.task');
-        var task_content_wrap = $(parent_task).find('.task-content-wrap');
+    // function task_accordion(e) {
+    //     let parent_task = $(this).closest('.task');
+    //     let task_content_wrap = $(parent_task).find('.task-content-wrap');
 
-        if ($(parent_task).hasClass('open')) {
-            $(task_content_wrap).slideUp(500, function () {
-                $(parent_task).removeClass('open');
-            });
-        } else {
-            $(task_content_wrap).slideDown(500, function () {
-                $(parent_task).addClass('open');
-            });
-        }
-    }
+    //     if($(parent_task).hasClass('open')) {
+    //         $(task_content_wrap).slideUp(500, function() {
+    //             $(parent_task).removeClass('open');
+    //         });
+
+    //     } else {
+    //         $(task_content_wrap).slideDown(500, function() {
+    //              $(parent_task).addClass('open');
+    //         });
+
+    //     }
+    // }
 
     add_task_btn.on('click', open_edit_modal);
     overlay.on('click', open_edit_modal);
     task_link.on('click', tab_task);
-    task_header.on('click', task_accordion);
+    // task_header.on('click', task_accordion);
 })(jQuery);
 
 (function ($) {
@@ -56,7 +58,6 @@
     li.each(function (i, el) {
         var color = $(el).attr('data-bg');
         $(el).css("background-color", color);
-        console.log(color);
     });
 
     li.on('click', function (e) {
